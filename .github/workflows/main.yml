@@ -36,7 +36,7 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add docs/Patrick_Sicurello_CV_Formatted.pdf
+          git add docs/Patrick_Sicurello_CV.pdf
           if git diff --cached --quiet; then
             echo "No changes in CV. Nothing to commit."
           else
