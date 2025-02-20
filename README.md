@@ -1,6 +1,6 @@
 # patrick-sicurello-cv
 
-Working repo for my personal CV generation. 
+Working repo for my personal CV generation. PDF should automatically update with changes to repo by running `create_cv.py`.
 
 ## PDF
 

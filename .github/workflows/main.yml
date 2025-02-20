@@ -25,8 +25,6 @@ jobs:
       - name: Install dependencies
         run: |
           pip install fpdf
-          # If you need other deps, list them here:
-          # pip install some-other-lib
 
       #Run your Python script to generate the PDF
       - name: Generate CV PDF

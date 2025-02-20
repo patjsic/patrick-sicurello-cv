@@ -31,7 +31,7 @@ class CustomPDF(FPDF):
 
         self.set_font("DejaVu", "", 11)
         self.cell(0, 6, "3100 Fallscliff Road, Baltimore, MD, 21211", ln=1, align="C")
-        self.cell(0, 6, "patsicurello@gmail.com | Tel: (510) 305-8493 | GitHub: github.com/patjsic")
+        self.cell(0, 6, "patsicurello@gmail.com | Tel: (510) 305-8493 | GitHub: github.com/patjsic", ln=1, align="C")
 
         # Small spacing after header
         self.ln(2)
