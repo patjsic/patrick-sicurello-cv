@@ -3,6 +3,25 @@ from fpdf import FPDF
 class CustomPDF(FPDF):
     """Custom PDF style chart for FPDF object. Currently hardcoding dejavusans.
     """
+    def hyperlink(self, link: str, text: str=None, lh: int=0, fontsize: int=11):
+        """Format link to be in blue and in a cell.
+
+        Args:
+            link (str): string hyperlink text
+            text (str): text to present a given hyperlink, if None uses raw link instead
+            lh (int): line height and position
+            fontsize (int): flexible font size to allow to fit in with any text
+        """
+        self.set_text_color(0, 0, 255)
+        self.set_font("DejaVu", "U", fontsize)
+        if text:
+            self.write(0, text, link=link)
+        else:
+            self.write(0, link, link=link)
+        
+        #Revert text color
+        self.set_text_color(0, 0, 0)
+
     def header(self):
         """Header includes personal information and is divided by a bottom line with 5 spacing.
         """
@@ -12,7 +31,7 @@ class CustomPDF(FPDF):
 
         self.set_font("DejaVu", "", 11)
         self.cell(0, 6, "3100 Fallscliff Road, Baltimore, MD, 21211", ln=1, align="C")
-        self.cell(0, 6, "patsicurello@gmail.com | Tel: (510) 305-8493 | GitHub: github.com/patjsic", ln=1, align="C")
+        self.cell(0, 6, "patsicurello@gmail.com | Tel: (510) 305-8493 | GitHub: github.com/patjsic")
 
         # Small spacing after header
         self.ln(2)
@@ -66,6 +85,7 @@ class CustomPDF(FPDF):
 
         self.ln(2)
 
+
     def bullet_point(self, text: str):
         """Prints a bullet point (Unicode bullet '•'), then wraps text in multiple lines if necessary.
 
@@ -82,9 +102,9 @@ def create_unicode_cv():
     pdf = CustomPDF()
 
     # Register the DejaVu font for Unicode support -- assumes tff files in same directory
-    pdf.add_font("DejaVu", "",   "fonts/DejaVuSans.ttf",         uni=True)  # Regular
-    pdf.add_font("DejaVu", "B",  "fonts/DejaVuSans-Bold.ttf",    uni=True)  # Bold
-    pdf.add_font("DejaVu", "I",  "fonts/DejaVuSans-Oblique.ttf", uni=True)  # Italic
+    pdf.add_font("DejaVu", "",   "DejaVuSans.ttf",         uni=True)  # Regular
+    pdf.add_font("DejaVu", "B",  "DejaVuSans-Bold.ttf",    uni=True)  # Bold
+    pdf.add_font("DejaVu", "I",  "DejaVuSans-Oblique.ttf", uni=True)  # Italic
     pdf.add_page()
 
     #
@@ -251,9 +271,9 @@ def create_unicode_cv():
     #
     # Export to PDF
     #
-    pdf_name = "Patrick_Sicurello_CV.pdf"
+    pdf_name = "docs/Patrick_Sicurello_CV.pdf"
     pdf.output(pdf_name)
-    print(f"CV successfully created: {pdf_name}")
+    print(f"CV successfully created at: {pdf_name}")
 
 if __name__ == "__main__":
     create_unicode_cv()
