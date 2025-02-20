@@ -129,10 +129,9 @@ def create_unicode_cv():
     #
     pdf.section_title("Research Interests")
     interests = [
-        "Scientific Machine Learning (SciML), Geometric Deep Learning",
+        "Scientific Machine Learning (SciML), specifically utilizing PINNs or FNOs on geospatial data",
+        "Geometric Deep Learning",
         "Remote Sensing, Geospatial AI, Uncertainty Quantification",
-        "Physics-Informed Neural Networks (PINNs)",
-        "Out-of-Distribution (OOD) Detection in Multivariate Time Series"
         "Data Science for Climate, Additive Manufacturing"
     ]
     for item in interests:
@@ -209,9 +208,9 @@ def create_unicode_cv():
     pdf.set_font("DejaVu", "", 11)
     tech_docs = [
         ("Climate TRACE Wastewater Treatment Plant Emissions Estimation Methodology\n"
-         " - GitHub: climatetracecoalition/methodology-documents"),
+         " - GitHub: https://github.com/climatetracecoalition/methodology-documents/blob/main/2024/Waste/Waste%20sector-Emissions%20from%20Wastewater%20Treatment%20Plants.docx.pdf"),
         ("Climate TRACE Global Road Transportation Emissions Methodology\n"
-         " - GitHub: climatetracecoalition/methodology-documents")
+         " - GitHub: https://github.com/climatetracecoalition/methodology-documents/blob/main/2024/Transportation/Transportation%20sector-Global%20Road%20Emissions.pdf")
     ]
     for doc in tech_docs:
         pdf.bullet_point(doc)
@@ -251,7 +250,7 @@ def create_unicode_cv():
     pdf.section_title("Awards & Grants")
     awards = [
         "NOAA Research Funding for Geospatial AI Applications (2023)",
-        "JHU Applied Physics Lab IRAD Award (2022, 2023, 2024)"
+        "JHU Applied Physics Lab IRAD Award (2022, 2023, 2024)",
         "JHU Applied Physics Lab Bravo Award (2024)"
     ]
     for award in awards:
