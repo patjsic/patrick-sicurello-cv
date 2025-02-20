@@ -196,7 +196,7 @@ def create_unicode_cv():
     pdf.set_font("DejaVu", "", 11)
     pdf.multi_cell(0, 5,
         "Sicurello, P. Physics-Informed Machine Learning for Characterization of Arctic Sea Ice.\n"
-        " - Presented at AGU Fall Meeting 2023\n"
+        " - Presented at AGU Fall Meeting 2024\n"
         " - DOI: 10.22541/essopenarchive.1264263.v1"
     )
     pdf.ln(3)
@@ -239,8 +239,8 @@ def create_unicode_cv():
          " - Developed a beta-VAE model to detect anomalous time-series data and performed statistical tests."),
         ("Geospatial Deep Learning for Environmental Monitoring\n"
          " - Applied GeoFM models to identify wastewater treatment ponds using geospatial embeddings."),
-        ("Best-Subset Selection for Regression Analysis\n"
-         " - Implemented best-subset selection, AIC, BIC, and cross-validation to analyze data.")
+        ("Reframing PINNs in a Multitask Learning Framework\n"
+         " - Explore noticeable performance boost when implementing hard parameter sharing between additive loss terms when training PINN.")
     ]
     for prj in projects:
         pdf.bullet_point(prj)
@@ -250,9 +250,9 @@ def create_unicode_cv():
     #
     pdf.section_title("Awards & Grants")
     awards = [
-        "NASA Cryosphere Research Grant (Co-PI, 2024)",
         "NOAA Research Funding for Geospatial AI Applications (2023)",
-        "JHU Applied Physics Lab IRAD Award (2023)"
+        "JHU Applied Physics Lab IRAD Award (2022, 2023, 2024)"
+        "JHU Applied Physics Lab Bravo Award (2024)"
     ]
     for award in awards:
         pdf.bullet_point(award)
