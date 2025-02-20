@@ -1,0 +1,45 @@
+name: Build and Update CV
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-cv:
+    runs-on: ubuntu-latest
+
+    steps:
+      #Check out your repository code
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      #Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      #Install Python dependencies
+      - name: Install dependencies
+        run: |
+          pip install fpdf
+          # If you need other deps, list them here:
+          # pip install some-other-lib
+
+      #Run your Python script to generate the PDF
+      - name: Generate CV PDF
+        run: |
+          python create_cv.py
+
+      #Commit and push PDF changes if there are any
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add docs/Patrick_Sicurello_CV_Formatted.pdf
+          if git diff --cached --quiet; then
+            echo "No changes in CV. Nothing to commit."
+          else
+            git commit -m "Automated PDF CV update"
+            git push
+          fi
