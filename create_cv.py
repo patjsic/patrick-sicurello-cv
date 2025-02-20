@@ -208,11 +208,9 @@ def create_unicode_cv():
     pdf.set_font("DejaVu", "", 11)
     tech_docs = [
         ("Climate TRACE Wastewater Treatment Plant Emissions Estimation Methodology\n"
-         " - GitHub: \n",
-         "https://github.com/climatetracecoalition/methodology-documents/blob/main/2024/Waste/Waste%20sector-Emissions%20from%20Wastewater%20Treatment%20Plants.docx.pdf"),
+         " - GitHub: 2024/Transportation/Transportation sector-Global Road Emissions.pdf"),
         ("Climate TRACE Global Road Transportation Emissions Methodology\n"
-         " - GitHub: \n",
-         "https://github.com/climatetracecoalition/methodology-documents/blob/main/2024/Transportation/Transportation%20sector-Global%20Road%20Emissions.pdf")
+         " - GitHub: 2024/Waste/Waste sector-Emissions from Wastewater Treatment Plants.docx.pdf")
     ]
     for doc in tech_docs:
         pdf.bullet_point(doc)
