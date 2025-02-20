@@ -7,6 +7,8 @@ on:
 jobs:
   build-cv:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write 
 
     steps:
       #Check out your repository code
